@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121102202043) do
+ActiveRecord::Schema.define(:version => 20121118205211) do
 
   create_table "shouts", :force => true do |t|
     t.integer  "user_id"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20121102202043) do
     t.string   "profile_image"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.string   "image_type"
   end
 
 end

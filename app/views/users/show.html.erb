@@ -12,8 +12,27 @@
 
 <p>
   <b>Username:</b>
-  <%= @user.username %>
+  <u><%= @user.username.html_safe %></u>
 </p>
+
+<p>
+	<b>Image:</b>
+	<% if @user.has_profile_image? %>
+		<%= image_tag @user.profile_image_uri %> 
+	<% else %>
+			No image available 
+	<% end %>
+</p>
+
+
+<h3>Shouts:</h3> 
+	<table>
+	<% for shouts in @user.shouts %> 
+		<tr>
+			<td><%= shouts.content %></td>
+		</tr>
+ 	<% end %>
+ 	</table>
 
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
